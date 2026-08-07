@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crane &amp; Archer — a software studio</title>
+<meta name="description" content="Crane & Archer is an independent software studio. We design software that creates real, lasting value for the people who use it, our partners, the platforms it lives on, and the world it touches. Maker of I Dream Stuff." />
+<meta name="theme-color" content="#f7f4ec" />
+<meta property="og:title" content="Crane & Archer" />
+<meta property="og:description" content="An independent software studio designing applications that create real, lasting value for everyone they touch." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://craneandarcher.com" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f7f4ec'/%3E%3Cg fill='none' stroke='%239a7a24' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M9 22 L23 10'/%3E%3Cpath d='M23 10 l-5 1 M23 10 l1 -5'/%3E%3C/g%3E%3Ccircle cx='9' cy='22' r='1.5' fill='%23b0873a'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f4ec; --paper-2:#fbf9f3; --ink:#221d16; --soft:#5c5346;
+    --faint:#9a9082; --gold:#9a7a24; --gold-deep:#856819;
+    --line:rgba(34,29,22,.12);
+    --maxw:660px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; min-height:100vh; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(900px 560px at 76% -14%, #fffdf8 0%, transparent 60%),
+      linear-gradient(180deg,#f8f5ee 0%, #f3efe4 100%);
+    background-attachment:fixed;
+  }
+  .serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto;
+    padding:clamp(44px,8vh,84px) 24px 40px; text-align:center;}
+
+  /* the brass plaque — a mounted object resting on the paper */
+  .plaque{display:block; width:clamp(280px,64vw,430px); height:auto; margin:0 auto;
+    border-radius:9px;
+    box-shadow:
+      0 30px 60px -30px rgba(70,52,20,.55),
+      0 2px 6px -2px rgba(70,52,20,.28),
+      0 0 0 1px rgba(120,95,45,.18);}
+
+  .lede{font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:clamp(23px,4vw,31px); line-height:1.4; color:#2c261d;
+    margin:44px auto 0; max-width:26ch; font-weight:500;}
+  .body{color:var(--soft); font-size:16.5px; margin:22px auto 0; max-width:54ch;}
+  .body .em{color:var(--gold-deep); font-weight:600;}
+
+  .motto{font-family:"Cormorant Garamond",Georgia,serif; font-style:italic;
+    font-size:clamp(19px,3vw,24px); color:var(--gold); font-weight:600;
+    margin:30px auto 0; max-width:44ch; line-height:1.5;}
+  .motto .nb{white-space:nowrap;}
+
+  .rule{width:42px; height:1px; background:var(--gold); opacity:.55; margin:44px auto; border:0;}
+
+  .card-label{font-size:11.5px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--faint); font-weight:700; margin:0 0 16px;}
+  .card{display:flex; align-items:center; gap:18px; text-align:left;
+    max-width:440px; margin:0 auto; padding:18px 20px; border-radius:18px;
+    background:linear-gradient(180deg,var(--paper-2),#f5f1e7);
+    border:1px solid var(--line);
+    box-shadow:0 20px 44px -30px rgba(70,52,20,.5);}
+  .card img{width:58px; height:58px; border-radius:14px; flex:0 0 auto;
+    box-shadow:0 4px 16px -6px rgba(50,38,18,.4);}
+  .card .name{font-family:"Cormorant Garamond",Georgia,serif; font-size:24px;
+    font-weight:600; margin:0 0 2px;}
+  .card .desc{color:var(--soft); font-size:14.5px; line-height:1.5; margin:0;}
+  .card .go{margin-top:9px; display:inline-block; font-size:13.5px; font-weight:700;
+    color:var(--gold-deep); text-decoration:none; letter-spacing:.02em;}
+  .card .go:hover{text-decoration:underline;}
+
+  .contact{margin:44px auto 0; font-size:14.5px;}
+  .contact .say{color:var(--soft);}
+  .contact a{color:var(--gold-deep); text-decoration:none; font-weight:700;}
+  .contact a:hover{text-decoration:underline;}
+
+  footer{text-align:center; color:var(--faint); font-size:12.5px;
+    letter-spacing:.03em; padding:36px 24px 44px; line-height:1.9;}
+  footer .star{color:var(--gold);}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="plaque" src="craneandarcher-logo.png" alt="Crane & Archer" />
+
+    <p class="lede">We design software that creates real and lasting value — for the
+      people who use it, the partners beside it, the platforms it lives on, and the
+      world it touches.</p>
+
+    <p class="body">At Crane &amp; Archer, prosperity is not a trade-off. When
+      incentives are aligned, it becomes an <span class="em">emergent property of good
+      design</span> — a single win shared by everyone at once.</p>
+
+    <p class="motto">We build where the old ways <span class="nb">meet the new</span> —<br/>
+      ancient craft and new machines,<br/>
+      the stars and the story.</p>
+
+    <hr class="rule" />
+
+    <p class="card-label">Our first app</p>
+    <div class="card">
+      <img src="idreamstuff-icon.png" alt="I Dream Stuff app icon" />
+      <div>
+        <p class="name">I Dream Stuff</p>
+        <p class="desc">A dream journal that helps you know yourself — read your dreams,
+          keep them as art, and watch them become a film with you inside.</p>
+        <a class="go" href="https://idreamstuff.com" target="_blank" rel="noopener">Visit idreamstuff.com&nbsp;↗</a>
+      </div>
+    </div>
+
+    <div class="contact">
+      <span class="say">Say hello —</span>
+      <a href="mailto:admin@craneandarcher.com">admin@craneandarcher.com</a>
+    </div>
+  </main>
+
+  <footer>
+    Crane &amp; Archer, LLC · Connecticut, USA<br/>
+    <span class="star">✦</span> Named for two constellations — the Crane and the Archer
+  </footer>
+</body>
+</html>
