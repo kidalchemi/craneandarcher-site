@@ -34,8 +34,20 @@
   }
   .serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;}
   a{color:inherit;}
-  .wrap{max-width:var(--maxw); margin:0 auto;
+  .wrap{max-width:var(--maxw); margin:0 auto; position:relative; z-index:1;
     padding:clamp(44px,8vh,84px) 24px 40px; text-align:center;}
+
+  /* subtle breathing constellations behind everything (incl. the namesakes:
+     Grus = the Crane, Sagittarius = the Archer) */
+  .sky{position:fixed; inset:0; width:100%; height:100%; z-index:0;
+    pointer-events:none; color:#1c1712;}
+  .sky circle{fill:currentColor;}
+  .sky polyline,.sky line{fill:none; stroke:currentColor; stroke-width:1;
+    vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-linejoin:round; opacity:.5;}
+  .constellation{opacity:0; animation:breathe var(--dur,20s) ease-in-out infinite;
+    animation-delay:var(--delay,0s);}
+  @keyframes breathe{0%,100%{opacity:0} 50%{opacity:var(--peak,.15)}}
+  @media (prefers-reduced-motion: reduce){ .constellation{animation:none; opacity:.05;} }
 
   /* the brass plaque — a mounted object resting on the paper */
   .plaque{display:block; width:clamp(280px,64vw,430px); height:auto; margin:0 auto;
@@ -79,12 +91,55 @@
   .contact a{color:var(--gold-deep); text-decoration:none; font-weight:700;}
   .contact a:hover{text-decoration:underline;}
 
-  footer{text-align:center; color:var(--faint); font-size:12.5px;
+  footer{position:relative; z-index:1; text-align:center; color:var(--faint); font-size:12.5px;
     letter-spacing:.03em; padding:36px 24px 44px; line-height:1.9;}
   footer .star{color:var(--gold);}
 </style>
 </head>
 <body>
+  <svg class="sky" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <!-- Cassiopeia (W) -->
+    <g class="constellation" style="--dur:16s;--delay:0s;--peak:.15" transform="translate(90,110)">
+      <polyline points="0,30 45,55 90,10 140,50 190,20"/>
+      <circle cx="0" cy="30" r="2.3"/><circle cx="45" cy="55" r="2.3"/><circle cx="90" cy="10" r="2.6"/><circle cx="140" cy="50" r="2.3"/><circle cx="190" cy="20" r="2.3"/>
+    </g>
+    <!-- Orion -->
+    <g class="constellation" style="--dur:22s;--delay:5s;--peak:.17" transform="translate(930,120)">
+      <polyline points="55,215 70,110 35,35 120,25 110,126 130,205"/>
+      <polyline points="70,110 90,118 110,126"/>
+      <circle cx="35" cy="35" r="2.8"/><circle cx="120" cy="25" r="2.4"/>
+      <circle cx="70" cy="110" r="2.1"/><circle cx="90" cy="118" r="2.1"/><circle cx="110" cy="126" r="2.1"/>
+      <circle cx="55" cy="215" r="2.6"/><circle cx="130" cy="205" r="2.8"/>
+    </g>
+    <!-- Grus, the Crane (namesake) -->
+    <g class="constellation" style="--dur:19s;--delay:11s;--peak:.2" transform="translate(110,520)">
+      <polyline points="30,15 55,60 72,112 100,150"/>
+      <line x1="72" y1="112" x2="122" y2="88"/>
+      <line x1="100" y1="150" x2="90" y2="215"/>
+      <line x1="100" y1="150" x2="122" y2="198"/>
+      <circle cx="30" cy="15" r="2.6"/><circle cx="55" cy="60" r="2.2"/><circle cx="72" cy="112" r="2.4"/><circle cx="100" cy="150" r="2.2"/><circle cx="90" cy="215" r="2.2"/><circle cx="122" cy="198" r="2.2"/><circle cx="122" cy="88" r="2.2"/>
+    </g>
+    <!-- Sagittarius, the Archer / Teapot (namesake) -->
+    <g class="constellation" style="--dur:24s;--delay:3s;--peak:.2" transform="translate(880,560)">
+      <polyline points="55,45 120,42 128,120 48,120 55,45"/>
+      <polyline points="55,45 95,8 120,42"/>
+      <polyline points="120,42 185,80 128,120"/>
+      <polyline points="55,45 10,80 48,120"/>
+      <circle cx="95" cy="8" r="2.2"/><circle cx="55" cy="45" r="2.4"/><circle cx="120" cy="42" r="2.4"/><circle cx="48" cy="120" r="2.4"/><circle cx="128" cy="120" r="2.4"/><circle cx="185" cy="80" r="2.2"/><circle cx="10" cy="80" r="2.2"/>
+    </g>
+    <!-- Ursa Major (Big Dipper) -->
+    <g class="constellation" style="--dur:20s;--delay:8s;--peak:.15" transform="translate(420,730)">
+      <polyline points="10,25 15,95 90,100 85,35 10,25"/>
+      <polyline points="85,35 140,30 200,55 258,80"/>
+      <circle cx="10" cy="25" r="2.5"/><circle cx="15" cy="95" r="2.3"/><circle cx="90" cy="100" r="2.3"/><circle cx="85" cy="35" r="2.3"/><circle cx="140" cy="30" r="2.3"/><circle cx="200" cy="55" r="2.3"/><circle cx="258" cy="80" r="2.5"/>
+    </g>
+    <!-- Lyra -->
+    <g class="constellation" style="--dur:17s;--delay:14s;--peak:.14" transform="translate(770,760)">
+      <polyline points="25,35 45,5 70,42"/>
+      <polyline points="25,35 70,42 60,88 15,80 25,35"/>
+      <circle cx="45" cy="5" r="2.6"/><circle cx="25" cy="35" r="2.1"/><circle cx="70" cy="42" r="2.1"/><circle cx="60" cy="88" r="2.1"/><circle cx="15" cy="80" r="2.1"/>
+    </g>
+  </svg>
   <main class="wrap">
     <img class="plaque" src="craneandarcher-logo.png" alt="Crane & Archer" />
 
