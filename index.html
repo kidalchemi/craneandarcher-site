@@ -27,7 +27,11 @@
   "description":"An independent software studio making things of lasting value. Maker of I Dream Stuff.",
   "foundingDate":"2026",
   "address":{"@type":"PostalAddress","streetAddress":"2389 Main St, Suite 100","addressLocality":"Glastonbury","addressRegion":"CT","postalCode":"06033","addressCountry":"US"},
-  "makesOffer":{"@type":"Offer","itemOffered":{"@type":"MobileApplication","name":"I Dream Stuff","applicationCategory":"LifestyleApplication","url":"https://idreamstuff.com"}}
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"MobileApplication","name":"I Dream Stuff","applicationCategory":"LifestyleApplication","url":"https://idreamstuff.com"}},
+    {"@type":"Offer","itemOffered":{"@type":"MobileApplication","name":"Whip Whap to the Rescue","applicationCategory":"GameApplication","url":"https://craneandarcher.com/whipwhap/"}},
+    {"@type":"Offer","itemOffered":{"@type":"WebApplication","name":"Get My Handles","applicationCategory":"BusinessApplication","url":"https://getmyhandles.com"}}
+  ]
 }
 </script>
 </head>
@@ -78,19 +82,36 @@
 
     <hr class="rule" />
 
-    <p class="label">Our first app</p>
-    <div class="card">
-      <img src="idreamstuff-icon.png" alt="I Dream Stuff app icon" />
-      <div>
-        <p class="name">I Dream Stuff</p>
-        <p class="desc">A dream journal that helps you know yourself — read your dreams through many
-          lenses, keep them as art, and watch them unfold as uncanny Dream Films.</p>
-      </div>
+    <p class="label">Our work</p>
+    <div class="cards">
+      <a class="card card-link" href="https://idreamstuff.com" target="_blank" rel="noopener">
+        <img src="idreamstuff-icon.png" alt="I Dream Stuff app icon" />
+        <div>
+          <p class="name">I Dream Stuff</p>
+          <p class="desc">A dream journal that helps you know yourself — read your dreams through many
+            lenses, keep them as art, and watch them unfold as uncanny Dream Films.</p>
+        </div>
+      </a>
+      <a class="card card-link" href="/whipwhap/">
+        <img src="whipwhap/icon.png" alt="Whip Whap to the Rescue" />
+        <div>
+          <p class="name">Whip Whap to the Rescue</p>
+          <p class="desc">A 3D rescue adventure for kids and grown-ups. Sneak into the villains' lairs,
+            free the friends in the cages, and get every one of them home.</p>
+        </div>
+      </a>
+      <a class="card card-link" href="https://getmyhandles.com" target="_blank" rel="noopener">
+        <img src="getmyhandles-icon.png" alt="Get My Handles" />
+        <div>
+          <p class="name">Get My Handles</p>
+          <p class="desc">Claim your name everywhere: check the .com, trademarks and your handle on every
+            major platform in seconds, then claim them all, step by step.</p>
+        </div>
+      </a>
     </div>
 
     <div class="btn-row">
       <a class="btn btn-primary" href="/work.html">See our work</a>
-      <a class="btn btn-ghost" href="https://idreamstuff.com" target="_blank" rel="noopener">Visit idreamstuff.com ↗</a>
     </div>
 
     <p class="motto">We’re a studio for the long view — building carefully, protecting the people
